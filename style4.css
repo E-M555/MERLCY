@@ -1,0 +1,234 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url('backgrounds.jpg');
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+  position: relative; /* Needed for absolute positioning of the logo */
+}
+
+/* Logo Container */
+.logo-container {
+  position: absolute;
+  top: -2.3rem; /* Distance from the top */
+  left: 0.5rem; /* Distance from the left */
+  z-index: 20; /* Ensure it's above other elements */
+}
+
+.logo-image {
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.1);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #000;
+  border-bottom: 1px solid #ff0000;
+  width: 100%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff0000;
+}
+
+/* Main Content */
+main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for contrast */
+  z-index: 0;
+}
+
+.gallery-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px; /* Match width with other pages */
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.gallery-item {
+  background-color: transparent;
+  border: 2px solid #ff0000;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 0, 0, 0.5);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 192px; /* Fixed height for consistency */
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-item p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.btn-modern {
+  position: relative;
+  background: linear-gradient(90deg, #ff0000, #ff4d4d);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 2rem; /* Pill-shaped button */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+}
+
+.btn-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.btn-modern:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.btn-modern:hover::before {
+  transform: scaleX(1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #000;
+  border-top: 1px solid #ff0000;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Adjust logo size */
+  .logo-image {
+    width: 100px; /* Smaller logo for mobile */
+  }
+
+  /* Adjust navbar links */
+  .navbar {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0.5rem;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  /* Adjust gallery content */
+  .gallery-content {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .gallery-item {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .gallery-item img {
+    height: auto; /* Allow images to scale naturally */
+  }
+
+  .gallery-item h3 {
+    font-size: 1rem; /* Smaller title */
+  }
+
+  .gallery-item p {
+    font-size: 0.75rem; /* Smaller description */
+  }
+
+  /* Adjust button */
+  .btn-modern {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .gallery-item h3 {
+    font-size: 0.875rem; /* Even smaller title */
+  }
+
+  .gallery-item p {
+    font-size: 0.7rem; /* Even smaller description */
+  }
+
+  .btn-modern {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+}

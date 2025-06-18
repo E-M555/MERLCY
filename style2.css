@@ -1,0 +1,212 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url('backgrounds.jpg');
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+  position: relative; /* Needed for absolute positioning of the logo */
+}
+
+/* Logo Container */
+.logo-container {
+  position: absolute;
+  top: -2.3rem; /* Distance from the top */
+  left: 0.5rem; /* Distance from the left */
+  z-index: 20; /* Ensure it's above other elements */
+}
+
+.logo-image {
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.1);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #000;
+  border-bottom: 1px solid #ff0000;
+  width: 100%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff0000;
+}
+
+/* Main Content */
+main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('backgrounds.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for contrast */
+  z-index: 0;
+}
+
+.about-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px; /* Limit the width of the content */
+  margin: 0 auto; /* Center the content horizontally */
+  padding: 2rem; /* Add padding for spacing */
+  text-align: center; /* Center-align text inside the content */
+}
+
+.about-content h2 {
+  font-size: 1.875rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+/* About Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.about-item {
+  background-color: transparent;
+  border: 2px solid #ff0000;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 0, 0, 0.5);
+}
+
+.about-item img {
+  width: 48px; /* Icon size */
+  height: 48px;
+  margin: 0 auto 1rem;
+}
+
+.about-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-item p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #000;
+  border-top: 1px solid #ff0000;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Adjust logo size */
+  .logo-image {
+    width: 100px; /* Smaller logo for mobile */
+  }
+
+  /* Adjust navbar links */
+  .navbar {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0.5rem;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  /* Adjust about content */
+  .about-content {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .about-content h2 {
+    font-size: 1.5rem; /* Smaller heading for mobile */
+  }
+
+  /* Adjust about item */
+  .about-item {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .about-item img {
+    width: 36px; /* Smaller icon size */
+    height: 36px;
+  }
+
+  .about-item h3 {
+    font-size: 1rem; /* Smaller title */
+  }
+
+  .about-item p {
+    font-size: 0.75rem; /* Smaller description */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .about-content h2 {
+    font-size: 1.25rem; /* Even smaller heading */
+  }
+
+  .about-item h3 {
+    font-size: 0.875rem; /* Slightly larger title for readability */
+  }
+
+  .about-item p {
+    font-size: 0.7rem; /* Even smaller description */
+  }
+
+  .about-item img {
+    width: 32px; /* Even smaller icon size */
+    height: 32px;
+  }
+}
